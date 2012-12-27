@@ -1,1 +1,1 @@
-{"main": "../sys/ev8_node_sys.erl"}
+{"main": "ev8_node_util.erl"}

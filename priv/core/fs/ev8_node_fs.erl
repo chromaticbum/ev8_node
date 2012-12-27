@@ -36,7 +36,8 @@ statSync(_, Path) ->
             {<<"ctime">>, {date, Ctime}}
            ]}.
 
+% TODO make this async and pass an event
 readFile({Context, _This}, Path, _Encoding, Callback) ->
   {ok, Contents} = file:read_file(Path),
 
-  ev8:call(Context, Callback, [Contents]).
+  ev8:call(Context, Callback, [null, Contents]).

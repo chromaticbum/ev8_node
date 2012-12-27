@@ -1,0 +1,12 @@
+{application, ev8_node,
+ [
+  {description, ""},
+  {vsn, "1"},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib
+                 ]},
+  {mod, { ev8_node_app, []}},
+  {env, []}
+ ]}.

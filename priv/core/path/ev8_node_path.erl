@@ -9,8 +9,8 @@
 join(_, Components) ->
   filename:join(Components).
 
-dirname(_, Path) ->
+dirname(_, [Path]) ->
   filename:dirname(Path).
 
-basename(_, Path) ->
+basename(_, [Path]) ->
   filename:basename(Path).

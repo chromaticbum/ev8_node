@@ -4,11 +4,11 @@
 
 -export([
   statSync/2,
-  readFile/4
+  readFile/2
   ]).
 
 % TODO missing blocks and blk_size
-statSync(_, Path) ->
+statSync(_, [Path]) ->
   {ok, #file_info{
       major_device = Device,
       inode = Inode,
@@ -37,7 +37,7 @@ statSync(_, Path) ->
            ]}.
 
 % TODO make this async and pass an event
-readFile({Context, _This}, Path, _Encoding, Callback) ->
+readFile({Context, _This}, [Path, _Encoding, Callback]) ->
   {ok, Contents} = file:read_file(Path),
 
   ev8:call(Context, Callback, [null, Contents]).
